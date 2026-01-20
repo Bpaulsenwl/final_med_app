@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Styles for the container element */
+.container {
+    max-width: 400px; /* Set maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 40px; /* Add padding inside the container */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+/* Styles for the main signup text */
+.login-text {
+    margin-top: 30px; /* Add top margin */
+    grid-column: 1 / 4; /* Span across all three columns */
+    text-align: center; /* Center-align text */
+}
+
+/* Styles for the main signup text */
+.login-text.last {
+    margin-top: 0; /* Add top margin */
+}
+
+/* Styles for form groups */
+.form-group {
+    margin-bottom: 20px; /* Bottom margin for spacing between form groups */
+}
+
+/* Styles for form group labels */
+.form-group label {
+    display: block; /* Make labels display as block elements */
+    margin-bottom: 5px; /* Bottom margin for spacing below labels */
+    font-weight: bold; /* Bold text for labels */
+}
+
+/* Styles for form controls */
+.form-control {
+    width: 100%; /* Width of form controls */
+    padding: 8px; /* Padding inside form controls */
+    font-size: 16px; /* Font size of form controls */
+    border: 1px solid #ccc; /* Border around form controls */
+    border-radius: 4px; /* Border radius for rounded corners */
+}
+
+/* Styles for button groups */
+.btn-group {
+    margin-top: 0; /* Top margin for spacing above button groups */
+    margin-bottom: 20px; /* Bottom margin for spacing below button groups */
+}
+
+/* Styles for buttons */
+.btn {
+    padding: 10px 20px; /* Padding inside buttons */
+    margin-bottom: 10px;
+    font-size: 16px; /* Font size of buttons */
+    border: none; /* No border for buttons */
+    border-radius: 4px; /* Border radius for rounded corners on buttons */
+    cursor: pointer; /* Cursor style on hover for buttons */
+    display: block;
+    width: 100%;
+}
+
+/* Styles for primary buttons */
+.btn-primary {
+    background-color: #007bff; /* Background color for primary buttons */
+    color: #fff; /* Text color for primary buttons */
+}
+
+/* Styles for danger (red) buttons */
+.btn-danger {
+    background-color: #dc3545; /* Background color for danger buttons */
+    color: #fff; /* Text color for danger buttons */
+}
