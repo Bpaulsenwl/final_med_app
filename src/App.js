@@ -7,6 +7,7 @@ import Landing_Page from './Components/Landing_Page/Landing_Page';
 import Sign_Up from './Components/Sign_Up/Sign_up';
 import Login from './Components/Login/Login';
 import FindDoctorSearch from './Components/FindDoctorSearch/FindDoctorSearch';
+import InstantConsultation from "./Components/InstantConsultation/InstantConsultation";
 
 // Function component for the main App
 function App() {
