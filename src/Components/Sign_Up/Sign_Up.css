@@ -12,7 +12,7 @@ a {
 /* Styles for the container element */
 .container {
     max-width: 400px; /* Set maximum width for the container */
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 5% auto 0 auto; /* Center the container horizontally */
     padding: 40px; /* Add padding inside the container */
     overflow: hidden; /* Hide any overflowing content */
 }
@@ -122,4 +122,13 @@ a {
 .btn-danger {
     background-color: #dc3545; /* Set background color for danger button */
     color: #fff; /* Set text color for danger button */
+}
+
+select.error, input.error {
+    border-color: #dc3545;
+}
+
+p.error {
+    color: #dc3545;
+    font-size: 12px;
 }
