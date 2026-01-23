@@ -1,0 +1,27 @@
+.notification-container {
+    position: fixed;
+    right: 50px;
+    top: 70px;
+
+}
+
+.appointment-card {
+    background-color: #3498db;
+    padding: 20px;
+    margin: 5px 0;
+    width: 300px;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+}
+
+.appointment-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.appointment-card .close{
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}

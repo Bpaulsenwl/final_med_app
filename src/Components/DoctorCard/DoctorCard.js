@@ -7,27 +7,46 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [appointments, setAppointments] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [appointments, setAppointments] = useState([]);
 
-  const handleBooking = () => {
-    setShowModal(true);
-  };
-
-  const handleCancel = (appointmentId) => {
-    const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
-    setAppointments(updatedAppointments);
-  };
-
-  const handleFormSubmit = (appointmentData) => {
-    const newAppointment = {
-      id: uuidv4(),
-      ...appointmentData,
+    const handleBooking = () => {
+        setShowModal(true);
     };
-    const updatedAppointments = [...appointments, newAppointment];
-    setAppointments(updatedAppointments);
-    setShowModal(false);
-  };
+
+    const handleCancel = (appointmentId) => {
+        const updatedAppointments = appointments.filter((appointment) => appointment.id !== appointmentId);
+        setAppointments(updatedAppointments);
+        localStorage.setItem(
+        "appointmentData",
+        JSON.stringify(updatedAppointments)
+        );    
+    };
+
+    const handleFormSubmit = (appointmentData) => {
+        const newAppointment = {
+        id: uuidv4(),
+        ...appointmentData,
+        };
+        const updatedAppointments = [...appointments, newAppointment];
+        setAppointments(updatedAppointments);
+            localStorage.setItem(
+        "appointmentData",
+        JSON.stringify(updatedAppointments)
+        );
+        setShowModal(false);
+    };
+
+    const hasAppointmentForDoctor = appointments.some(
+        (appointment) => appointment.doctorName === name
+    );
+
+    useEffect(() => {
+    const appointmentData = JSON.parse(localStorage.getItem("appointmentData"));
+    if (appointmentData) {
+      setAppointments(appointmentData);
+    }
+  }, []);
 
   return (
     <div className="doctor-card-container">
@@ -55,8 +74,8 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
        <Popup
           style={{ backgroundColor: '#FFFFFF' }}
           trigger={
-            <button className={`book-appointment-btn ${appointments.length > 0 ? 'cancel-appointment' : ''}`}>
-              {appointments.length > 0 ? (
+            <button className={`book-appointment-btn ${appointments.length > 0  && hasAppointmentForDoctor ? 'cancel-appointment' : ''}`}>
+              {appointments.length > 0  && hasAppointmentForDoctor ? (
                 <div>Cancel Appointment</div>
               ) : (
                 <div>Book Appointment</div>
@@ -82,10 +101,10 @@ const DoctorCard = ({ name, speciality, experience, ratings, profilePic }) => {
                 </div>
               </div>
 
-              {appointments.length > 0 ? (
+              {appointments.length > 0 && hasAppointmentForDoctor ? (
                 <>
                   <h3 style={{ textAlign: 'center' }}>Appointment Booked!</h3>
-                  {appointments.map((appointment) => (
+                  {appointments.filter((appointment) => appointment.doctorName === name).map((appointment) => (
                     <div className="bookedInfo" key={appointment.id}>
                       <p>Name: {appointment.name}</p>
                       <p>Phone Number: {appointment.phoneNumber}</p>
