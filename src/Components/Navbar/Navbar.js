@@ -7,12 +7,11 @@ import "./Navbar.css";
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
-
+    const [profileOpen, setProfileOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     const [name, setName] = useState("");
     const[email,setEmail]=useState("");
-    const [showDropdown, setShowDropdown] = useState(false);
     const handleClick = () => setClick(!click);
 
     
@@ -34,6 +33,7 @@ const Navbar = () => {
           }
         }
         setEmail('');
+        setProfileOpen(false);
         window.location.reload();
     }
     const handleDropdown = () => {
@@ -73,13 +73,26 @@ const Navbar = () => {
         </li>
         {isLoggedIn?(
           <>
-            <li>Welcome, {name}</li>
+            <li className="nav-user">
+                Welcome,&nbsp;
+                <span onClick={() => setProfileOpen((prev) => !prev)} style={{ cursor: "pointer" }}>{name}</span>
+                {profileOpen?(
+        <>
+            <div className="popover">
+                <a href="/profile">Your Profile</a>
+                <a href="/reports" className="hidden">Your Reports</a>
+            </div>            
+            </>
+            ) : (
+                <>
+                </>
+            )}                
+            </li>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
               </button>
             </li>
-            
           </>
         ) : (
           <>
@@ -95,7 +108,7 @@ const Navbar = () => {
             </li>
           </>
         )}
-      </ul>
+      </ul>    
     </nav>
   );
 };

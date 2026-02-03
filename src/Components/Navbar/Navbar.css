@@ -185,3 +185,26 @@ nav {
     background-color:#3685fb; /* Hover effect */
     color:white; /* Hover effect */
 }
+
+.nav-user {
+    position: relative;
+}
+
+.popover {
+    position: absolute;
+    top: 30px;
+    padding: 5px 10px;
+    border: 1px solid lightgray;
+    background: #fff;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.popover a {
+    display: block;
+    margin: 5px 0 5px 0;
+}
+
+.hidden {
+    display: none!important;
+}
