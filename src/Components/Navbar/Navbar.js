@@ -36,9 +36,7 @@ const Navbar = () => {
         setProfileOpen(false);
         window.location.reload();
     }
-    const handleDropdown = () => {
-      setShowDropdown(!showDropdown);
-    }
+
     useEffect(() => { 
       const storedemail = sessionStorage.getItem("email");
 
