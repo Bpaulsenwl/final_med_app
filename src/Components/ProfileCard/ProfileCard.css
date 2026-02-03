@@ -1,0 +1,15 @@
+
+
+.profile-container {
+    max-width: 800px;
+    margin: 5% auto 0 auto;
+    padding: 40px;
+}
+
+.profile-container p {
+    margin: 0 0 10px 0;
+}
+
+.unsized-button {
+    width: auto;
+}

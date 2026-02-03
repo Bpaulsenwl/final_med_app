@@ -80,7 +80,7 @@ const Navbar = () => {
         <>
             <div className="popover">
                 <a href="/profile">Your Profile</a>
-                <a href="/reports" className="hidden">Your Reports</a>
+                <a href="/reports">Your Reports</a>
             </div>            
             </>
             ) : (
