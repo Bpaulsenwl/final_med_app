@@ -1,0 +1,27 @@
+.reviews-container {
+    max-width: 1000px;
+    margin: auto;
+    margin-top:10%;
+    color: #414146;
+    padding: 0 20px;
+    position: static;
+    width: 100%;
+}
+
+.review-table {
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.review-table th {
+    padding: 5px 20px 5px 10px;
+    background: #3498db7c;
+    border-bottom: 1px solid darkgray;
+    text-align: left;
+}
+
+.review-table td {
+    padding: 5px 20px 5px 10px;
+    border-bottom: 1px solid darkgray;
+    text-align: left;
+}
